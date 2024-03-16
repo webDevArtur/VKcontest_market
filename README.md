@@ -33,5 +33,3 @@
 ## API
 Для загрузки товаров используется API [Fake Store API](https://fakestoreapi.com/products).
 
-## Автор
-Ваше имя или никнейм
