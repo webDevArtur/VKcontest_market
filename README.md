@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# Корзина товаров магазина
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
+Данное приложение создано для отображения корзины товаров магазина. Пользователь может просматривать список товаров, изменять их количество и удалять из корзины. Приложение также отображает общую сумму заказа.
 
-Currently, two official plugins are available:
+Ссылка на проект: https://v-kcontest-market.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
+- React
+- TypeScript
+- MobX для управления состоянием
+- Material-UI для компонентов
 
-## Expanding the ESLint configuration
+## Обработка ошибок
+При возникновении ошибки при загрузке товаров с сервера, пользователю выводится сообщение о том, что произошла ошибка загрузки.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![image](https://github.com/webDevArtur/VKcontest_market/assets/141954990/51e6c3bb-86fb-49b1-a71c-b9db305ff757)
 
-- Configure the top-level `parserOptions` property like this:
+## Пустой список товаров
+Если корзина товаров пуста, пользователю выводится сообщение о том, что корзина пуста, и предложение начать добавлять товары.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![image](https://github.com/webDevArtur/VKcontest_market/assets/141954990/0a2f7db2-c7d3-49bd-80bb-d23c9e3646c0)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Адаптивность
+Приложение адаптивно и работает на различных устройствах и экранах благодаря использованию Material-UI и flexbox/grid в CSS.
+
+![image](https://github.com/webDevArtur/VKcontest_market/assets/141954990/9de0e7e4-6ab2-4593-9659-5d96d0b2ddcd)
+
+## Действия с товаром
+1. Изменение количества: Пользователь может увеличить или уменьшить количество товара в корзине, нажимая на кнопки с иконками "+" и "-". Ограничения: минимальное количество - 1 товар, максимальное количество - 10 товаров.
+2. Удаление товара: Пользователь может удалить товар из корзины, нажав на кнопку с иконкой корзины.
+
+## API
+Для загрузки товаров используется API [Fake Store API](https://fakestoreapi.com/products).
+
+## Автор
+Ваше имя или никнейм
