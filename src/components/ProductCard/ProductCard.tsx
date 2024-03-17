@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Card, CardContent, Typography, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -37,10 +37,10 @@ const ProductCard: React.FC<ProductCardProps> = observer(({ product }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 transition: 'box-shadow 0.3s',
-                boxShadow: isHovered ? '0 0 10px rgba(0, 0, 0, 0.1)' : 'none', // Добавляем тень при наведении
+                boxShadow: isHovered ? '0 0 10px rgba(0, 0, 0, 0.1)' : 'none',
             }}
-            onMouseEnter={() => setIsHovered(true)} // Устанавливаем isHovered в true при наведении
-            onMouseLeave={() => setIsHovered(false)} // Устанавливаем isHovered в false при уходе мыши
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
             <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '15px' }}>{product.title}</Typography>
