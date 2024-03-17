@@ -13,6 +13,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = observer(({ product }) => {
     const store = useStore();
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleDelete = () => {
         store.removeFromCart(product.id);
@@ -29,7 +30,18 @@ const ProductCard: React.FC<ProductCardProps> = observer(({ product }) => {
     };
 
     return (
-        <Card sx={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+        <Card
+            sx={{
+                height: '100%',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'box-shadow 0.3s',
+                boxShadow: isHovered ? '0 0 10px rgba(0, 0, 0, 0.1)' : 'none', // Добавляем тень при наведении
+            }}
+            onMouseEnter={() => setIsHovered(true)} // Устанавливаем isHovered в true при наведении
+            onMouseLeave={() => setIsHovered(false)} // Устанавливаем isHovered в false при уходе мыши
+        >
             <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '15px' }}>{product.title}</Typography>
                 <div style={{
