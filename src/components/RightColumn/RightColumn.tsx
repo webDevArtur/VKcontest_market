@@ -21,7 +21,7 @@ const RightColumn = observer(() => {
             <Paper sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'  }}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2, mt: 2 }}>Ваша корзина</Typography>
                 <Typography variant="body1" sx={{ fontWeight: 'bold', mb: 1 }}>Количество товаров: {store.totalItemsCount}</Typography>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', mb: 1 }}>Итого: {store.totalAmount.toFixed(1)} ₽</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', mb: 1 }}>Итого: {store.totalAmount.toFixed(2)} ₽</Typography>
                 <Button variant="contained" onClick={handleOpenModal} sx={{ mt: 2, mb: 2 }}>Оплатить</Button>
             </Paper>
             <PaymentModal open={isModalOpen} onClose={handleCloseModal} />
